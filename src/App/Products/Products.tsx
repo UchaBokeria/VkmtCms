@@ -1,10 +1,10 @@
 import { Component } from 'react';
-import { CategorySource } from './CategorySource';
+import { ProductsSource } from './ProductsSource';
 import FileUpload from '@comp/FileUpload/FileUpload';
 import Filters from './Filters/Filters';
 import Table from "@comp/Table/Table";
 
-export default class Category extends Component <any, any>{
+export default class Products extends Component <any, any>{
 
   constructor(props) {
     super(props);
@@ -13,7 +13,7 @@ export default class Category extends Component <any, any>{
   icons = (modalItem:any) => {
     return(
       <>
-      <input type="file" onChange={async (e) => modalItem.icon = await CategorySource.iconUpload(e.target.files[0])}/>
+      <input type="file" onChange={async (e) => modalItem.icon = await ProductsSource.iconUpload(e.target.files[0])}/>
 
       {modalItem?.icon && <div className="Preview" key={modalItem?.id+modalItem?.icon}>
         <p>Preview</p>
@@ -25,13 +25,13 @@ export default class Category extends Component <any, any>{
 
   render() {
     return (
-      <div className="Categories">
+      <div className="Products">
           <h1 className='title'>Categories</h1>
           <div>
             { 
               <Table config = {
                 {
-                  request: new CategorySource(),
+                  request: new ProductsSource(),
                   columns: [
                     { name: "id", title: "id", hidden: true },
                     { name: "name", title: "Category" },

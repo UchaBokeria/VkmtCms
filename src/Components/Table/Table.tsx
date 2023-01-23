@@ -321,14 +321,19 @@ export default class Table extends Component <any, any, any> {
                                 defaultValue={""}
                               ></option>
                               {field.options.map((option, i) => {
-                                return (
-                                  <option
-                                    key={"modal-opt_" + (i + 1)}
-                                    value={option.value}
-                                  >
-                                    {option.name}
-                                  </option>
-                                );
+                                if(typeof option != 'object') {
+                                  return (
+                                    <option key={"modal-opt_" + (i + 1)} value={option}>
+                                      {option}
+                                    </option>
+                                  );
+                                } else {
+                                  return (
+                                    <option key={"modal-opt_" + (i + 1)} value={option.value}>
+                                      {option.name}
+                                    </option>
+                                  );
+                                }
                               })}
                             </select>
                           );

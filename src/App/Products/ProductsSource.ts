@@ -1,6 +1,6 @@
 import { Http } from '@serv/Http';
 
-export class CategorySource {
+export class ProductsSource {
 
   constructor() { }
 

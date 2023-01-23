@@ -20,15 +20,16 @@ export default class Slider extends Component <any, any>{
                     request: new SliderSource(this.state.id),
                     columns: [
                       { name: "id", title: "id", hidden: true },
-                      { name: "title", title: "title" },
+                      { name: "redirect_id", title: "#" },
+                      { name: "source", title: "Source" },
                     ],
                     modal: {
                       perm: "admin",
                       editable: true,
                       header: { identifier: 'id' },
                       sections: [
-                        { name: "Product Number", key: "product_id", type: "text", editable: true },
-                        { name: "title", key: "title", type: "text", editable: false },
+                        { name: "ID", key: "redirect_id", type: "text"},
+                        { name: "Source", key: "source", type: "select", options: ['products','blogs']},
                       ]
                     }
                   }

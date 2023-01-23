@@ -42,7 +42,6 @@ export default class Translate extends Component <any, any>{
                     modal: {
                       perm: "admin",
                       editable: true,
-                      header: { identifier: 'id' },
                       sections: [
                         { name: "Language", key: "name", type: "text", editable: false }
                       ],
