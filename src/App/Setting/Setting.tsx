@@ -1,4 +1,4 @@
-import './Communication.scss';
+
 import Tabs from "@comp/Tabs/Tabs";
 import { Component, lazy } from "react";
 
