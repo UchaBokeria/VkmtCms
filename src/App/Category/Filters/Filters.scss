@@ -1,0 +1,38 @@
+
+
+.title {
+  font-size: 1.8vw;
+  font-weight: $bold;
+  color: $primary;
+  font-family: $font01;
+  margin-bottom: 3vh;
+  text-transform: capitalize;
+}
+
+.prio_one {
+    background: $red;
+}
+
+.prio_two {
+    background: $yellow;
+}
+
+.prio_three {
+    background: $green;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.prioContainer {
+    // width: 100%;
+    // @include flex();
+}
+
+.datetime {
+    // letter-spacing: 0.1vw;
+    //color: $secondary;
+}

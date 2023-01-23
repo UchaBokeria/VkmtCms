@@ -1,0 +1,147 @@
+@import './Anim.scss';
+
+.prio_one {
+  background: white;
+}
+
+.prio_two {
+  background: $secondary;
+}
+
+.prio_three {
+  background: #ffdd1d;
+}
+
+.circle {
+  width: 1.5vw;
+  height: 3vh;
+  border-radius:1ch;
+}
+
+.prioContainer {
+  width: 100%;
+  @include flex();
+}
+
+.datetime {
+  letter-spacing: 0.1vw;
+  //color: $secondary;
+}
+
+.login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $background_blue;
+  .login-wrapper {
+    // box-shadow: rgba(336, 165, 191, 0.48) 6px 3px 26px 10px, rgba(337, 133,333, 0.8) -6px -2px 16px 0px;
+    background: #0d1b2d;
+    z-index: 1111111;
+    max-width: 450px;
+    width: 100%;
+    border-radius:1ch;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    gap: 25px;
+    .logo {    filter: drop-shadow(3px 5px 2px rgba(0, 0, 0, 0.4));
+      width: 200px;
+      min-width: 135px;
+      img {
+        width: 100%;    filter: drop-shadow(3px 5px 2px rgba(0, 0, 0, 0.4));
+      }
+    }
+    .login-form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 25px;
+      width: 100%;
+      .input-label {
+        width: 100%;
+        position: relative;
+        // &:before {
+        //   content: "";
+        //   width: 2px;
+        //   height: 28px;
+        //   background-color: $gray;
+        //   position: absolute;
+        //   left: 70px;
+        //   top: 50%;
+        //   transform: translateY(-50%);
+        //   display: block;
+        //   z-index: 9;
+        // }
+        input {
+          width: 100%;
+          height: 50px;
+          border-radius:1ch;
+          background-color: rgba(51, 100, 163, 0.1);
+          // padding-left: 90px;
+          padding: 0 20px;
+          // background-image: url("../../Assets/Images/icons/user.svg");
+          background-repeat: no-repeat;
+          background-position: 30px;
+          border: none;
+          position: relative;
+          transition: all 0.3s ease-in-out;
+          outline: 2px solid transparent;
+          font-family: $font01;
+          // &[type="text"] {
+          //   background-size: 20px;
+          //   background-image: url("../../Assets/Images/icons/user.svg");
+          //   &:not(:focus):invalid {
+          //     outline: 2px solid red !important;
+          //     background-color: $white;
+          //     transition: all 0.3s ease-in-out;
+          //   }
+          // }
+          // &[type="email"] {
+          //   background-size: 20px;
+          //   background-image: url("../../Assets/Images/icons/user.svg");
+          //   &:not(:focus):invalid {
+          //     outline: 2px solid red !important;
+          //     background-color: $white;
+          //     transition: all 0.3s ease-in-out;
+          //   }
+          // }
+          // &[type="password"] {
+          //   background-size: 16px;
+          //   background-image: url("../../Assets/Images/icons/lock.svg");
+          // }
+          &::placeholder {
+            font-family: $font01;
+          }
+          &:focus {
+            transition: all 0.3s ease-in-out;
+            outline: 2px solid $primary !important;
+            background-color: $white;
+          }
+        }
+      }
+      .submit-btn {
+        cursor: pointer;
+        width: 100%;
+        height: 40px;
+        padding: 6px 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $primary;
+        color: $white;
+        font-family: $font01;
+        // font-weight: $bold;
+        font-size: 14px;
+        // text-transform: uppercase;
+        border-radius:1ch;
+        border: 2px solid transparent;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+}

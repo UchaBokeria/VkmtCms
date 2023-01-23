@@ -1,0 +1,36 @@
+@import "../../Assets/Styles/Linkin";
+
+.tab-links {
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;  
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap:2vw;
+  border-bottom: 1px solid $black;
+  margin-bottom: 50px;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px 5px 4px 4px;
+    font-family: $font01;
+    color: $primary;
+    font-size: 14px;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+    background-color: $primary;
+    color:white;
+    p{font-weight: $accent;}
+    &.active,
+    &:hover {
+        cursor: pointer;
+        background-color: $orange;
+        transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+.Loading-wrap {
+  transition: all 1s ease-in-out;
+}

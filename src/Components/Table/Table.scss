@@ -1,0 +1,389 @@
+@import "../../Assets/Styles/Linkin";
+
+.Loading-wrap {
+  width: 100%;
+  height: inherit;
+  position: relative;
+  z-index: 1111111111111111111;
+}
+
+table {
+  
+  border-radius: 1ch;
+}
+
+.Table {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  // box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;  
+  border-radius: 1ch;
+  margin-top:2vh;
+  background-color: $gray;
+  width: 100%;
+  color: $black;
+
+  .hidden {
+    display: none;
+  }
+
+  .selected {
+    background-color: #bfcad8;
+
+    td {
+      color: $black;
+    }
+  }
+
+  .TableHeaderRow {
+    font-size: 1.2vw;
+    background-color: $black;
+    font-weight: $regular;
+  }
+  
+  .TableHeader {
+    background-color: $primary;
+    border-bottom: none;
+  }
+
+
+  td {
+    font-size: 16px;
+    color: $white;
+    font-family: $font01;
+    padding: 18px 10px;
+  }
+
+  tbody {
+    tr {
+      border-bottom: 0.1px solid #ccc;
+
+      td {
+        user-select: text;
+        min-height: 150px;
+        vertical-align: middle;
+        padding: 20px 10px;
+        font-size: 14px;
+        color: $primary;
+        font-family: $font01;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .TableHeaderSearch {
+    padding: 0 5px;
+
+    td {
+      padding: 20px 8px;
+
+      input {
+        width: 100%;
+        height: 5vh;
+        font-size: 14px;
+        font-family: $font01;
+        color: $black;
+        border: none;
+        outline: 2px solid transparent;
+        padding-left: 1vw;
+        border-radius: 0.8ch;
+        transition: all 0.3s ease-in-out;
+
+        &:placeholder {
+          font-size: 1vw;
+          font-family: $font01;
+        }
+
+        &:focus {
+          transition: all 0.3s ease-in-out;
+          box-shadow: 0px 0px 8px 2px rgba(255, 255, 255, 0.41);
+        }
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.Modal {
+  table { margin: 4vh 0; box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;}
+  position: fixed;
+  z-index: 111111;
+  overflow-y:scroll;
+  &::-webkit-scrollbar{display: none;}
+  padding: 3vh 2vw;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  height: 100vh;
+  background-color: $white;
+  // padding: 30px 20px;
+  border-left: 2px solid $white;
+
+
+  .ModalHeader {
+    height: 5vh;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5vh;
+
+    h2 {
+      font-size: 20px;
+      font-family: $font01;
+      font-weight: $bold;
+      color: $primary;
+    }
+
+    .close-btn {
+      position:absolute;
+      top:0;
+      right: 0vw;
+      width: 50px;
+      height: 50px;
+      border-radius: 1ch;
+      border: none;
+      background-color: $primary;
+      outline: 2px solid transparent;
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      i {
+        color: $white;
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:hover {
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        outline: 2px solid $primary;
+        background-color: $white;
+
+        i {
+          color: $primary;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+
+  .ModalBody {
+    min-height: 70vh;
+    // height: 70vh;
+    overflow-y: scroll;
+    &::-webkit-scrollbar{display: none;}
+    gap: 30px;
+    > div {
+      width: 100%;
+      border-bottom: 2px solid #000000;
+      padding-bottom: 30px;
+      &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+    }
+    .ModalField {
+      margin-bottom: 5vh;
+
+      .field-title {
+        font-size: 1vw;
+        height: 5vh;
+        font-family: $font01;
+        font-weight: $bold;
+        color: $primary;
+        text-transform: capitalize;
+      }
+
+      input {
+        box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;  
+        &[type="text"] {
+          width: 100%;
+          padding: 12px 0 12px 20px;
+          border-radius: 1ch;
+          border: none;
+          background-color: $gray;
+          font-size: 14px;
+          font-family: $font01 !important;
+          transition: all 0.3s ease-in-out;
+
+          &::placeholder {
+            font-family: $font01 !important;
+            font-size: 14px;
+            color: $gray;
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        &[type="checkbox"] {
+          background-color: #ebeff6;
+          display: flex !important;
+          justify-content: center;
+          align-items: center;
+          padding: 8px;
+          border-radius: 1ch;
+          gap: 10px;
+          font-family: "Open Sans", sans-serif !important;
+          font-weight: 500 !important;
+          text-transform: capitalize !important;
+          font-size: 16px !important;
+          color: #000;
+          outline: 2px solid transparent;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+
+      select {
+        width: 100%;
+        padding: 12px;
+        border-radius: 1ch;
+        border: none;
+        background-color: $gray;
+        font-size: 14px;
+        font-family: $font01 !important;
+        transition: all 0.3s ease-in-out;
+
+        &::placeholder {
+          font-family: $font01 !important;
+          font-size: 14px;
+          color: $gray;
+        }
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    .Slider,
+    .Filters {
+      width: 100%;
+    }
+  }
+
+  .ModalFooter {
+    height:10vh;
+    height:6vh;
+    display: flex;
+    justify-content: flex-end;
+    gap: 25px;
+    margin-top: 5vh;
+    button {
+      box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;  
+      outline: 2px solid transparent;
+      transition: all 0.3s ease-in-out;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 1ch;
+      font-family: $font01 !important;
+      font-weight: $medium !important;
+      text-transform: capitalize !important;
+      font-size: 14px !important;
+      background-color: $primary;
+      color: $white;
+      
+      &:hover {
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+      }
+    }
+    button.close {background-color: $orange;}
+  }
+  
+}
+
+.Tools {
+  padding: 0 !important;
+  border-bottom: 0 !important;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+
+  button {
+    outline: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 1ch;
+    font-family: $font01 !important;
+    font-weight: $medium !important;
+    text-transform: capitalize !important;
+    font-size: 14px !important;
+    background-color: $primary;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    &:hover {
+      transition: all 0.3s ease-in-out;
+      background-color: $white !important;
+      color: $primary;
+      cursor: pointer;
+    }
+
+    i {
+      font-size: 20px;
+      width: 20px;
+    }
+
+    &.select-all {
+      padding: 10px;
+      i {
+        width: 22px;
+        font-size: 22px;
+      }
+
+      &:hover {
+
+        i {
+          color: $primary;
+        }
+      }
+    }
+
+    &.create {
+      background-color: $primary;
+      color: $white;
+      padding: 10px 15px;
+
+      &:hover {
+        color: $primary;
+
+      }
+    }
+
+    &.delete {
+      background-color: $orange;
+      color: $white;
+
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+
+  i {
+  }
+
+  .createTools {
+    width: 30%;
+    @include flex(space-between);
+  }
+}
+
+button {
+  transition: all 1s ease-in-out;
+  &:hover {
+    transition: all 1s ease-in-out;
+  }
+}
